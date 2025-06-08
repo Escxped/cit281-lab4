@@ -3,34 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lab 4</title>
+  <title>Lab 4 – Express Server Basics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: linear-gradient(90deg, rgba(42,155,132,1) 0%, rgba(87,108,199,1) 51%, rgba(83,237,206,1) 100%);
+      color: #fff;
+      margin: 0;
+    }
+
+    h1 { color: #ffe066; }
+    ul { line-height: 1.8; }
+    code {
+      background-color: rgba(255,255,255,0.15);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background-color: #007acc;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .button:hover {
+      background-color: #005f99;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to Lab 4</h1>
-  <form id="messageForm">
-    <label for="message">Enter your message:</label><br />
-    <input type="text" id="message" name="message" required />
-    <button type="submit">Send</button>
-  </form>
 
-  <div id="response"></div>
+  <h1>🧪 Lab 4 – Express Server Basics</h1>
 
-  <script>
-    document.getElementById('messageForm').addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const message = document.getElementById('message').value;
+  <p>This lab introduced the basics of setting up a Node.js server using the Express framework. You learned how to configure middleware, define routes, parse JSON requests, and respond to API calls using <code>fetch()</code>.</p>
 
-      const res = await fetch('/api/message', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ message })
-      });
+  <h2>🔍 Topics Covered</h2>
+  <ul>
+    <li>Creating a basic Express server</li>
+    <li>Using <code>express.json()</code> middleware</li>
+    <li>Defining POST routes to handle client input</li>
+    <li>Testing with a simple HTML form and <code>fetch()</code></li>
+  </ul>
 
-      const data = await res.json();
-      document.getElementById('response').textContent = `Server says: ${data.reply}`;
-    });
-  </script>
+  <h2>📁 Key Files</h2>
+  <ul>
+    <li><code>lab-04.js</code> – Express server logic</li>
+    <li><code>package.json</code> – Dependencies</li>
+    <li><code>index.html</code> – Frontend form and client-side logic</li>
+  </ul>
+
+  <div class="button-container">
+    <a href="https://github.com/Escxped/cit281-lab4" class="button" target="_blank">📂 View Lab on GitHub</a>
+    <a href="https://escxped.github.io/" class="button">⬅ Back to Main Portfolio</a>
+  </div>
+
 </body>
 </html>
